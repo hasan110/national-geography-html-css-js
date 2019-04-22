@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>National Geographic</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="icon" type="image/ico" href="favicon.ico">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="css/cover.css">
+	<style type="text/css">
+		.bg-cover {
+			background: url('img/cover-bg.jpg') no-repeat;
+			background-size: cover;
+			position: relative;
+		}
+
+		#section-3 { background: url('img/bg-sec-3.jpg') no-repeat; background-size: cover; background-attachment: fixed;  }
+  		.h1-shadow { text-shadow: 1px 1px 7px #000; color: #fff; }
+
+
+		.bg-video { position: absolute; top: 0; left: 0; width: 100%; }
+		.bg-video video {  width: 100%; }
+
+		.card { transition: all 0.25s ease-in-out; }
+		.card img { height: 168px; }
+		.card:hover { box-shadow: #ccc 2px 2px 10px; transform: scale(1.1,1.1) }
+
+		.section { min-height: 700px; padding-top: 100px; }
+
+		footer {
+			background: #333;
+		}
+
+		.nav-fixed { position: fixed; width: 100%; top: 0; left: 0; padding: 5px 15px; background: #000; transition: all .25s ease-in; z-index: 1; }
+	</style>
+</head>
+<body>
+<div class="bg-cover" id="home-sec">
+	<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column text-center">
+	  <header class="masthead mb-auto" id="navigation">
+	    <div class="inner">
+	      <img src="logo.svg" class="masthead-brand text-white" width="120">
+	      <nav class="nav nav-masthead justify-content-center">
+	        <a class="nav-link slide-link" href="#home-sec">Home</a>
+	        <a class="nav-link slide-link" href="#section-2">Animals</a>
+	        <a class="nav-link slide-link" href="#section-3">Culture & History</a>
+	        <a class="nav-link slide-link" href="#section-4">Environment</a>
+	      </nav>
+	    </div>
+	  </header>
+
+	  <main role="main" class="inner cover">
+	    <h1 class="cover-heading">NATIONAL GEOGRAPHIC</h1>
+	    <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
+	    <p class="lead">
+	      <a href="#section-2" class="btn btn-lg btn-secondary slide-link">Learn more</a>
+	    </p>
+	  </main>
+	</div>
+</div>
+
+<div class="section h-100" id="section-2">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1 class="py-4 text-center">ANIMALS</h1>
+			</div>
+		</div>
+		<div class="row" id="animal_DOM_container">
+
+		</div>
+	</div>
+</div>
+
+<div class="section h-100" id="section-3">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1 class="py-4 text-center h1-shadow">CULTURE & HISTORY</h1>
+			</div>
+		</div>
+		<div class="row" id="culture_DOM_container">
+			
+		</div>
+	</div>
+</div>
+
+<div class="section h-100" id="section-4">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1 class="py-4 text-center">ENVIRONMENT</h1>
+			</div>
+		</div>
+		<div class="row" id="enviroment_DOM_container">
+			
+		</div>
+	</div>
+</div>
+
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-white">
+				<p class="text-center py-3">&copy; Copyright 2019</p>
+			</div>
+		</div>
+	</div>
+</footer>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+	var animal_html = "";
+	var animal_arr = [
+		{ img: 'https://www.nationalgeographic.com/content/dam/environment/2019/04/earth-day/01_earthday_nationalgeographic_2473379.adapt.133.1.jpg', title: 'Animal 1', desc: `Some quick example text to build on the card title and make up the bulk of the card's content.`, link: '#' },
+		{ img: 'https://static.boredpanda.com/blog/wp-content/uploads/2015/12/national-geographic-photo-of-the-day-internet-favorites-2015__880.jpg', title: 'Animal 2', desc: `Some quick example text to build on the card title and make up the bulk of the card's content.`, link: '#' },
+		{ img: 'https://media-cdn.tripadvisor.com/media/photo-s/11/35/cc/21/cormorant-fisherman.jpg', title: 'Animal 3', desc: `Some quick example text to build on the card title and make up the bulk of the card's content.`, link: '#' },
+		{ img: 'http://ec.europa.eu/environment/nature/cormorants/images/FAQ-4.jpg', title: 'Animal 4', desc: `Some quick example text to build on the card title and make up the bulk of the card's content.`, link: '#' },
+	];
+
+	for (var i = 0; i < animal_arr.length; i++) {
+		var obj = animal_arr[i];
+		animal_html += `
+				<div class="col-md-3 mt-4 pt-3">
+				<div class="card">
+					<img src="${obj.img}" class="card-img-top" alt="...">
+					<div class="card-body">
+					    <h5 class="card-title">${obj.title}</h5>
+					    <p class="card-text">${obj.desc}</p>
+					    <a href="${obj.link}" class="btn btn-primary">Read More</a>
+					</div>
+				</div></div>`;
+	}
+	$('#animal_DOM_container').html(animal_html);
+
+	var culture_html = "";
+	var culture_arr = [
+		{ img: 'https://mymodernmet.com/wp/wp-content/uploads/2018/04/NG-TPOTY2018-WEEK1-007.jpg', title: 'Culture 3', desc: `Some quick example text to build on the card title and make up the bulk of the card's content.`, link: '#' },
+		{ img: 'https://www.magneticnorthtravel.com/uploads/tours/8f98e50d05501239a25a68335ffeb101.jpg', title: 'Culture 1', desc: `Some quick example text to build on the card title and make up the bulk of the card's content.`, link: '#' },
+		{ img: 'https://files.tripstodiscover.com/files/2014/10/Garden-Of-The-Gods.jpg', title: 'Culture 2', desc: `Some quick example text to build on the card title and make up the bulk of the card's content.`, link: '#' },
+		{ img: 'https://static.boredpanda.com/blog/wp-content/uploads/2015/12/national-geographic-photo-of-the-day-internet-favorites-2015-40__880.jpg', title: 'Culture 4', desc: `Some quick example text to build on the card title and make up the bulk of the card's content.`, link: '#' },
+	];
+
+	for (var i = 0; i < culture_arr.length; i++) {
+		var obj = culture_arr[i];
+		culture_html += `
+				<div class="col-md-3 mt-4 pt-3">
+				<div class="card">
+					<img src="${obj.img}" class="card-img-top" alt="...">
+					<div class="card-body">
+					    <h5 class="card-title">${obj.title}</h5>
+					    <p class="card-text">${obj.desc}</p>
+					    <a href="${obj.link}" class="btn btn-primary">Read More</a>
+					</div>
+				</div></div>`;
+	}
+	$('#culture_DOM_container').html(culture_html);
+
+	var enviroment_html = "";
+	var enviroment_arr = [
+		{ img: 'https://assets-natgeotv.fnghub.com/Shows/69023.jpg', title: 'Animal 1', desc: `Some quick example text to build on the card title and make up the bulk of the card's content.`, link: '#' },
+		{ img: 'https://worldexpeditions.com/croppedImages/Indian-Sub-Continent/Nepal/Annapurna-region-Nepal-402871-500px.jpg', title: 'Animal 2', desc: `Some quick example text to build on the card title and make up the bulk of the card's content.`, link: '#' },
+		{ img: 'https://cdn.theatlantic.com/assets/media/img/photo/2012/07/national-geographic-traveler-photo-contest-2012/n20_assinibn/main_900.jpg?1420582430', title: 'Animal 3', desc: `Some quick example text to build on the card title and make up the bulk of the card's content.`, link: '#' },
+		{ img: 'https://assets.lookbookspro.com/stephen-wilkes-1/gs_5669d584-fd10-4340-9e89-304c0a771fd0.jpg', title: 'Animal 4', desc: `Some quick example text to build on the card title and make up the bulk of the card's content.`, link: '#' },
+	];
+
+	for (var i = 0; i < enviroment_arr.length; i++) {
+		var obj = enviroment_arr[i];
+		enviroment_html += `
+				<div class="col-md-3 mt-4 pt-3">
+				<div class="card">
+					<img src="${obj.img}" class="card-img-top" alt="...">
+					<div class="card-body">
+					    <h5 class="card-title">${obj.title}</h5>
+					    <p class="card-text">${obj.desc}</p>
+					    <a href="${obj.link}" class="btn btn-primary">Read More</a>
+					</div>
+				</div></div>`;
+	}
+	$('#enviroment_DOM_container').html(enviroment_html);
+
+	$(".slide-link").on('click', function() {
+		$attr = $(this).attr('href')
+	    $('html, body').animate({
+	        scrollTop: $($attr).offset().top
+	    }, 500);
+	});
+
+	$(window).bind('scroll', function () {
+	    if ($(window).scrollTop() > 50) {
+	        $('#navigation').addClass('nav-fixed');
+	    } else {
+	        $('#navigation').removeClass('nav-fixed');
+	    }
+	});
+</script>
+</body>
+</html>
